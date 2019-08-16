@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<flow name="DSRIP_Audit_Log_UtilFlow" doc:id="0ba56cfc-664e-4550-8c8d-ecf2c8022731" >
+		<logger level="INFO" doc:name="Logger" doc:id="9de081d2-3196-46a5-809d-0edf8278449d" message="Audit log flow started asynchronously"/>
+		<choice doc:name="Choice" doc:id="a9f9d288-ae3d-4cdb-be71-abcbca8fbf46" >
+			<when expression="#[vars.clientId == p('sema4.clientid')]">
+				<logger level="INFO" doc:name="Logger" doc:id="009e3352-551c-4cf8-94f7-d81b358100d1" message="#['Insert Query for Audit: ' ++ write(payload, &quot;application/java&quot;)]"/>
+				<db:insert doc:name="Sema4_Insert" doc:id="065a61b9-edd9-4b5e-bb7f-fc5169c05cac" config-ref="Sema4_DBConfig">
+					<db:sql >INSERT INTO AUDIT_LOG (MEDICAL_RECORD_NUMBER, SUBJECT_AREA, DATE_TIME, ENVIRONMENT, CONSUMER_NAME, CORRELATION_ID) VALUES(
+:msmrn, :apiName, CURRENT_TIMESTAMP, :environment, :clientId, :correlationId)</db:sql>
+					<db:input-parameters ><![CDATA[#[%dw 2.0
+output application/java
+var getClientId = 
+if(vars.clientId == p('pat360.clientid'))
+	'PAT360'
+else if (vars.clientId == p('apiconnect.clientid'))
+	'APICONNECT'
+else if (vars.clientId == p('basicapp.clientid'))
+	'BASIC'
+else if (vars.clientId == p('sema4.clientid'))
+	'SEMA4'
+else
+	'UNKNOWN'
+---
+{
+	msmrn: vars.msmrn,
+	apiName: vars.apiName,
+	environment: p('mule.env'),
+	clientId: getClientId,
+	correlationId: vars.correlationId
+}]]]></db:input-parameters>
+				</db:insert>
+				<logger level="INFO" doc:name="Logger" doc:id="f3917a4e-5920-4fa4-aa64-c81ebfdae826" message="Audit log flow finished succesfully"/>
+			</when>
+			<otherwise >
+				<logger level="INFO" doc:name="Logger" doc:id="549d6dfa-320f-4deb-8be6-4c0cf64b8cbb" message="Client is not SEMA4. Avoiding the Audit log functionality"/>
+			</otherwise>
+		</choice>
+		<error-handler >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="640522a9-5472-42af-a3e9-1ad662496b76" >
+				<logger level="INFO" doc:name="Logger" doc:id="9b687f20-b943-4bba-879b-a07f565a5517" message="#['Exception while performing Audit logging. ' ++ error.description]"/>
+			</on-error-propagate>
+		</error-handler>
+	</flow>	
+	
+</mule>

@@ -1,0 +1,24 @@
+#%RAML 1.0 DataType
+
+#This file is located at dataTypes/elements/Dosage.raml
+
+type: Element
+properties:
+  sequence?: 
+    type: integer
+    description: The order of the dosage instructions
+  text?: 
+    type: string
+    description: Free text dosage instructions e.g. SIG
+  additionalInstruction?: CodeableConcept[]
+  patientInstruction?: string
+  timing?: Timing
+  /^asNeeded(Boolean|CodeableConcept)$/?: boolean | CodeableConcept 
+  site?: CodeableConcept
+  route?: CodeableConcept
+  method?: CodeableConcept
+  /^dose(Range|Quantity)$/?: Range | SimpleQuantity
+  maxDosePerPeriod?: Ratio
+  maxDosePerAdministration?: SimpleQuantity
+  maxDosePerLifetime?: SimpleQuantity
+  /^rate(Ratio|Range|Quantity)$/?: Ratio | Range | SimpleQuantity

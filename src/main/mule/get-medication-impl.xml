@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:redis="http://www.mulesoft.org/schema/mule/redis"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core"
+	xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
+http://www.mulesoft.org/schema/mule/redis http://www.mulesoft.org/schema/mule/redis/current/mule-redis.xsd">
+	<sub-flow name="key_builder_Sub_Flow" doc:id="2e2b2b54-a19e-4f8e-8931-f7ab91fb4646" >
+		<ee:transform doc:name="Build Redis Key" doc:id="9c5e1c69-9b5e-4770-9ce4-24178e3d4571" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+var specialChar= '-'
+var getClientId=
+if(vars.clientId == (p('pat360.clientid')))
+	'PAT360'
+else if(vars.clientId == (p('basicapp.clientid')))
+	'BASIC'
+else if(vars.clientId == (p('sema4.clientid')))
+	'SEMA4'
+else if(vars.clientId == (p('oscar.clientid')))
+	'OSCAR'
+else if(vars.clientId == (p('oscar.mask.clientid')))
+	'OSCAR-MASK'
+else if(vars.clientId == (p('sema4.NonBasic.clientid')))
+	'SEMA4NONBASIC'		
+else
+	''
+---
+([(vars.apiName default ''), p('mule.env'),  getClientId] ++ (message.attributes.queryParams pluck $)) joinBy specialChar
+]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="ab167e5b-9c90-4e33-9300-97d42e39ac68" message="created redis key : #[vars.rediskey]"/>
+	</sub-flow>
+	<flow name="get-medication-implFlow" doc:id="11268978-d10c-42b3-98b1-e512c9a2e4e2" >
+		<ee:transform doc:name="Set Variables" doc:id="f1aa8fdc-79bf-44d6-9660-98ed44c8eeac" >
+				<ee:variables >
+				<ee:set-variable resource="dwl/correlationId.dwl" variableName="correlationId" />
+				<ee:set-variable resource="dwl/startTime.dwl" variableName="startTime" />
+				<ee:set-variable resource="dwl/apiName.dwl" variableName="apiName" />
+				<ee:set-variable resource="dwl/clientId.dwl" variableName="clientId" />
+				<ee:set-variable resource="dwl/msmrn.dwl" variableName="msmrn" />
+			</ee:variables>
+		</ee:transform>
+		<logger level="INFO" doc:name="Entry Logger" doc:id="4176e992-32eb-4933-bf6f-d5ce1942362e" message="#['MedicationAdmin-EXP API Entry ' 
+++ write({
+	&quot;SVC_ID&quot;: vars.apiName,
+	&quot;Correlation ID &quot;: vars.correlationId,
+	&quot;Start Time&quot;: vars.startTime
+}, &quot;application/java&quot;)]"/>
+	<flow-ref doc:name="key_builder_sub_flow" doc:id="0c64bf79-ad7e-4698-8298-d225416ae031" name="key_builder_Sub_Flow"/>
+		<redis:exists doc:name="redis-key-exists" doc:id="302854cc-65b0-4662-b060-b99f95672591" key="#[vars.rediskey]" target="exists" config-ref="Redis__Configuration"/>
+		<logger level="INFO" doc:name="Logger" doc:id="663ae36a-978a-4c46-a7ad-6698da41a064" message="#['Does ' ++ vars.rediskey ++ ' exist? ' ++ vars.exists]"/>
+		<choice doc:name="choice-rediskey" doc:id="edd567b7-c574-459d-9a37-455b7a725c44" >
+			<when expression="#[vars.exists]">
+				<logger level="INFO" doc:name="log-exists-message" doc:id="80c794f0-5ccd-4a12-a6aa-007386f704c2" message="Have the Key so getting from Cache"/>
+				<redis:get doc:name="get-rediskey" doc:id="903aeedc-6c78-4b10-a243-f8919be27c77" config-ref="Redis__Configuration" key="#[vars.rediskey]"/>
+			</when>
+			<otherwise >
+				<flow-ref doc:name="Invoke_MedicationAdmin_SystemAPI_Flow" doc:id="ddb57142-e044-435f-a2cf-6676d10eb603" name="Invoke_MedicationAdmin_SystemAPI_Flow"/>
+				<logger level="INFO" doc:name="Logger" doc:id="5e9f3f84-085e-4908-af64-b23c44dd859c" message="Before Redis"/>
+				<redis:set doc:name="redis-set" doc:id="5ecbba95-3ea3-45c1-b8f2-77dfb2f740f1" config-ref="Redis__Configuration" target="redis" key="#[vars.rediskey]" expire="${cache.expire}"/>
+			</otherwise>
+		</choice>
+		<async doc:name="Async" doc:id="36b1d500-1e8e-4e78-9e3e-60565b1cd65d" >
+			<flow-ref doc:name="DSRIP_Audit_Log_UtilFlow" doc:id="c71a231f-e18a-4d96-bfb2-a695d2db6e97" name="DSRIP_Audit_Log_UtilFlow"/>
+		</async>
+		<logger level="INFO" doc:name="Exit Logger" doc:id="9be63802-fed8-4862-bf66-3036ada00307" message="#['MedicationAdmin-EXP App Exit '
+++ 
+write({
+	&quot;SVC_ID&quot;:	vars.apiName,
+	&quot;Correlation ID&quot;:	vars.correlationId,
+	&quot;End Time&quot;: now().nanoseconds,
+	&quot;Total Processing Time &quot;:	((now().nanoseconds - vars.startTime) / 1000000) ++ 'milli sec' 
+}, &quot;application/java&quot;)]"/>
+	</flow>
+	<flow name="Invoke_MedicationAdmin_SystemAPI_Flow" doc:id="382fa788-e9b5-4899-8b75-2576c60513a5" >
+		<choice doc:name="Choice" doc:id="4bd7889d-3931-4ab5-b258-6d064ed178b1" >
+			<when expression="#[(vars.clientId == p('sema4.clientid')) or (vars.clientId == p('sema4.NonBasic.clientid'))]">
+				<logger level="INFO" doc:name="Logger" doc:id="90b9c39a-6b06-4d73-9207-e3a8d7522567" message="Mapping for Sema4"/>
+				<http:request method="GET" doc:name="Request" doc:id="7431254f-1fd2-4bfb-a64f-e5c88d639c00" config-ref="https-rc_SYS" path="/System/SEMA4/MedicationAdmin">
+					<http:headers ><![CDATA[#[output application/java
+---
+{
+	client_id : vars.clientId,
+	correlation_Id : vars.correlationId
+}]]]></http:headers>
+					<http:query-params><![CDATA[
+      #[attributes.queryParams]
+    ]]></http:query-params>
+				</http:request>
+				<ee:transform doc:name="Transform Message" doc:id="83fe31fe-ab06-4682-b9ea-ed6ed7017300" >
+					<ee:message >
+						<ee:set-payload resource="dwl/medication-admin-sema4-mapping.dwl" />
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[(vars.clientId == p('oscar.clientid'))]">
+				<logger level="INFO" doc:name="Logger" doc:id="49f8cfd9-cec4-48f2-acae-f7920887c06c" message="Mapping for OSCAR"/>
+				<http:request method="GET" doc:name="Request" doc:id="05832c03-0766-4628-970f-98f764567518" config-ref="https-rc_SYS" path="/System/PEP/MedicationAdmin">
+					<http:headers ><![CDATA[#[output application/java
+---
+{
+	client_id : vars.clientId,
+	correlation_Id : vars.correlationId
+}]]]></http:headers>
+					<http:query-params><![CDATA[
+      #[attributes.queryParams]
+    ]]></http:query-params>
+				</http:request>
+				<ee:transform doc:name="Transform Message" doc:id="40aa7b88-2f20-4d74-b232-2657da13c800" >
+					<ee:message >
+						<ee:set-payload resource="dwl/medication-admin-oscar-mapping.dwl" />
+					</ee:message>
+				</ee:transform>
+			</when>
+			<when expression="#[vars.clientId == p('oscar.mask.clientid')]">
+				<logger level="INFO" doc:name="Logger" doc:id="e2b6c1c3-5419-4886-8d54-a6fda7b669c6" message="Masked Mapping for OSCAR"/>
+				<http:request method="GET" doc:name="Request" doc:id="90a216e1-5ffd-4e59-a3ec-24ecc5fa06ef" config-ref="https-rc_SYS" path="/System/PEP/MedicationAdmin">
+					<http:headers ><![CDATA[#[output application/java
+---
+{
+	client_id : vars.clientId,
+	correlation_Id : vars.correlationId
+}]]]></http:headers>
+					<http:query-params><![CDATA[
+      #[attributes.queryParams]
+    ]]></http:query-params>
+				</http:request>
+				<ee:transform doc:name="Transform Message" doc:id="024164b3-f570-4760-bd31-83f11d53627b" >
+					<ee:message >
+						<ee:set-payload resource="dwl/medication-admin-oscar-mapping-masked.dwl" />
+					</ee:message>
+				</ee:transform>
+			</when>
+			<otherwise >
+				<logger level="INFO" doc:name="Logger" doc:id="2de56956-2c53-44cc-be8a-4d80ccf8d0a9" message="Invalid clientId received!!!"/>
+				<ee:transform doc:name="Transform Message" doc:id="0492992e-2062-400e-88d3-ad013b3e1d34" >
+					<ee:message >
+						<ee:set-payload ><![CDATA[%dw 2.0
+output application/java
+---
+{ 
+	status: "400", 
+	message: message.attributes.reasonPhrase
+}]]></ee:set-payload>
+					</ee:message>
+					<ee:variables >
+						<ee:set-variable variableName="reasonPhrase" ><![CDATA[%dw 2.0
+output application/java
+---
+'Invalid ClientID']]></ee:set-variable>
+						<ee:set-variable variableName="statusCode" ><![CDATA[400]]></ee:set-variable>
+					</ee:variables>
+				</ee:transform>
+			</otherwise>
+		</choice>
+	</flow>
+</mule>

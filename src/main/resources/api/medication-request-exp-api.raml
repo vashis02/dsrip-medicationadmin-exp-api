@@ -1,0 +1,120 @@
+#%RAML 1.0
+title: Mount Sinai Health System MedicationRequest FHIR API
+version: v1
+#baseUri: http://localhost:8081/api
+mediaType: [application/xml+fhir, application/json+fhir]
+
+
+types:
+
+
+  #Primitives
+  id:                           !include dataTypes/primitives/id.raml
+  base64Binary:                 string
+  code:                         !include dataTypes/primitives/code.raml
+  date:                         !include dataTypes/primitives/date.raml
+  dateTime:                     !include dataTypes/primitives/dateTime.raml
+  decimal:                      !include dataTypes/primitives/decimal.raml
+  gender:                       !include dataTypes/primitives/gender.raml
+  instant:                      !include dataTypes/primitives/instant.raml
+  markdown:                     !include dataTypes/primitives/markdown.raml
+  ObservationRelationshipType:  !include dataTypes/primitives/ObservationRelationshipType.raml
+  EncounterState:               !include dataTypes/primitives/EncounterState.raml
+  ObservationCode:              !include dataTypes/primitives/ObservationCode.raml
+  ObservationStatus:            !include dataTypes/primitives/ObservationStatus.raml
+  positiveInt:                  !include dataTypes/primitives/positiveInt.raml
+  time:                         !include dataTypes/primitives/time.raml
+  UnitOfTime:                   !include dataTypes/primitives/UnitOfTime.raml
+  unsignedInt:                  !include dataTypes/primitives/unsignedInt.raml
+  uri:                          !include dataTypes/primitives/uri.raml
+  xhtml:                        !include dataTypes/primitives/markdown.raml
+  #immunizationStatus
+  ImmunizationStatus:           !include dataTypes/primitives/ImmunizationStatus.raml
+  oid:                          !include dataTypes/primitives/oid.raml
+  uuid:                         !include dataTypes/primitives/uuid.raml
+  #Elements  
+  Extension:                    !include dataTypes/elements/Extension.raml
+  Element:                      !include dataTypes/elements/Element.raml
+  Address:                      !include dataTypes/elements/Address.raml
+  Age:                          Quantity
+  Annotation:                   !include dataTypes/elements/Annotation.raml
+  Attachment:                   !include dataTypes/elements/Attachment.raml
+  BackboneElement:              !include dataTypes/elements/BackboneElement.raml
+  Coding:                       !include dataTypes/elements/Coding.raml
+  CodeableConcept:              !include dataTypes/elements/CodeableConcept.raml
+  Conformance:                  !include dataTypes/resources/Conformance.raml
+  ContactPoint:                 !include dataTypes/elements/ContactPoint.raml
+  Dosage:                       !include dataTypes/elements/Dosage.raml
+  Duration:                     !include dataTypes/elements/Duration.raml
+  HumanName:                    !include dataTypes/elements/HumanName.raml
+  Identifier:                   !include dataTypes/elements/Identifier.raml
+  Meta:                         !include dataTypes/elements/Meta.raml
+  Narrative:                    !include dataTypes/elements/Narrative.raml
+  Period:                       !include dataTypes/elements/Reference.raml
+  Ratio:                        !include dataTypes/elements/Ratio.raml
+  Range:                        !include dataTypes/elements/Range.raml
+  Reference:                    !include dataTypes/elements/Reference.raml
+  SampledData:                  !include dataTypes/elements/SampledData.raml
+  Signature:                    !include dataTypes/elements/Signature.raml
+  SimpleQuantity:               Quantity
+  Timing:                       !include dataTypes/elements/Timing.raml
+  Quantity:                     !include dataTypes/elements/Quantity.raml
+ 
+  #Resources
+  DomainResource:               !include dataTypes/resources/DomainResource.raml
+  MedicationRequest:            !include dataTypes/resources/MedicationRequest.raml
+  Resource:                     !include dataTypes/resources/Resource.raml
+
+  #Entries
+  Entry:                        !include dataTypes/entries/Entry.raml #not to be used directly - use more specific types: <resourceName>Entry
+  MedicationRequestEntry:           !include dataTypes/entries/MedicationRequestEntry.raml
+      
+  #Bundles
+  Bundle:                       !include dataTypes/bundles/Bundle.raml  #not to be used directly - use more specific types: GeneralBundle or <resourceName>Bundle
+  MedicationRequestBundle:          !include dataTypes/bundles/MedicationRequestBundle.raml
+
+resourceTypes:
+  fhirResourceType:             !include resourceTypes/fhirResourceType.raml
+  fhirResource:                 !include resourceTypes/fhirResource.raml
+  fhirCompartment:              !include resourceTypes/fhirCompartment.raml
+  fhirSearch:                   !include resourceTypes/fhirSearch.raml
+  fhirVersionedResource:        !include resourceTypes/fhirVersionedResource.raml
+  fhirHistory:                  !include resourceTypes/fhirHistory.raml
+
+traits:
+  vread:                        !include traits/vread.raml
+  read:                         !include traits/read.raml
+  update:                       !include traits/update.raml
+  delete:                       !include traits/delete.raml
+  create:                       !include traits/create.raml
+  search:                       !include traits/search.raml
+  conformance:                  !include traits/conformance.raml
+  history:                      !include traits/history.raml
+  conditionalOperation:         !include traits/conditionalOperation.raml
+  
+  # resource specific
+  medicationRequestSearch:
+    queryParameters: !include queryParams/resources/medicationRequestParams.yaml
+
+
+  #POST search - resource specific
+  medicationRequestPOSTSearch:
+    body:
+      application/x-www-form-urlencoded:
+        properties: !include queryParams/resources/medicationRequestParams.yaml 
+
+### API definition ###
+
+
+/MedicationRequest:
+  type: {fhirResourceType: {
+      #postExample : !include examples/requests/post_medication_request.json,
+      getExample  : !include examples/responses/get_medication_request.json
+    }
+  }
+  get:
+    is: [ medicationRequestSearch ]
+  put:
+    is: [ medicationRequestSearch ]
+  delete:
+    is: [ medicationRequestSearch ]

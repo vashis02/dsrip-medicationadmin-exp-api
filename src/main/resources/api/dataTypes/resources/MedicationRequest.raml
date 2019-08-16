@@ -1,0 +1,55 @@
+#%RAML 1.0 DataType
+
+#This file is located at dataTypes/resources/MedicationRequest.raml
+
+type: DomainResource
+properties:
+  identifier?: Identifier[]
+  definition?: Reference[]
+  basedOn?: Reference[]
+  groupIdentifier?: Identifier
+  status?: 
+    type: code
+    enum: [active, on-hold, cancelled, completed, entered-in-error, stopped, draft, unknown]
+  intent: 
+    type: code
+    enum: [proposal, plan, order, instance-order]
+  category?: CodeableConcept
+  priority?: 
+    type: code
+    enum: [routine, urgent, stat, asap]
+  /^medication(CodeableConcept|Reference)$/: CodeableConcept | Reference
+  subject: Reference
+  context?: Reference
+  supportingInformation?: Reference[]
+  authoredOn?: dateTime
+  requester?:
+    description: Who/What requested the Request
+    type: BackboneElement
+    properties:
+      agent: Reference
+      onBehalfOf?: Reference
+  recorder?: Reference
+  reasonCode?: CodeableConcept[]
+  reasonReference?: Reference[]
+  note?: Annotation[]
+  dosageInstruction?: Dosage[]
+  dispenseRequest?: 
+    description: Medication supply authorization
+    type: BackboneElement
+    properties:
+      validityPeriod?: Period
+      numberOfRepeatsAllowed?: positiveInt
+      quantity?: SimpleQuantity
+      expectedSupplyDuration?: Duration
+      performer?: Reference
+  substitution?: 
+     description: Any restrictions on medication substitution
+     type: BackboneElement
+     properties:
+       allowed: boolean
+       reason?: CodeableConcept
+  priorPrescription?: Reference
+  detectedIssue?: Reference[]
+  eventHistroy?: Reference[]
+  

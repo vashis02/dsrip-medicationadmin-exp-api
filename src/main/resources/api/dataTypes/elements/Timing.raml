@@ -1,0 +1,29 @@
+#%RAML 1.0 DataType
+
+#This file is located at dataTypes/elements/Timing.raml
+
+
+type: Element
+properties:
+  event?: dateTime[]
+  repeat?:
+    type: Element
+    properties:
+      /^bounds(Duration|Range|Period)$/?: Duration | Range | Period
+      count?: integer
+      countMax?: integer
+      duration?: decimal
+      durationMax?: decimal
+      durationUnit?: UnitOfTime
+      frequency?: integer
+      frequencyMax?: integer
+      period?: decimal
+      periodMax?: decimal
+      periodUnit?: UnitOfTime
+      dayOfWeek?: code[]
+      timeOfDay?: time[]
+      when?:
+        type: code[]
+        #enum: [HS, WAKE, C, CM, CD, CV, AC, ACM, ACD, ACV, PC, PCM, PCD, PCV]
+      offset?: unsignedInt
+  code?: CodeableConcept

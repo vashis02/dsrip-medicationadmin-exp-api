@@ -1,0 +1,1885 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "meta": {
+        "lastUpdated": "2017-11-16T08:02:52.964-05:00"
+    },
+    "entry": [
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/0",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 9144,
+                    "coding": [
+                        {
+                            "display": 9144,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121303117
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-26T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-26T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-26T05:45:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/1",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 15914,
+                    "coding": [
+                        {
+                            "display": 15914,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121320788
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-26T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-26T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-26T15:34:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/2",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 91105,
+                    "coding": [
+                        {
+                            "display": 91105,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121543270
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": null
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "16 lozenge"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:45:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/3",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 9144,
+                    "coding": [
+                        {
+                            "display": 9144,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121548915
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:56:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/4",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 7874,
+                    "coding": [
+                        {
+                            "display": 7874,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121277786
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/5",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 18968,
+                    "coding": [
+                        {
+                            "display": 18968,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121277788
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "each nostril"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/6",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 6114,
+                    "coding": [
+                        {
+                            "display": 6114,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121287243
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T23:41:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/7",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 91105,
+                    "coding": [
+                        {
+                            "display": 91105,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121480752
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-29T00:29:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/8",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 1451,
+                    "coding": [
+                        {
+                            "display": 1451,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282234
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-25T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:22:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/9",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 10001,
+                    "coding": [
+                        {
+                            "display": 10001,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121547641
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "40 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:45:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/10",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 18968,
+                    "coding": [
+                        {
+                            "display": 18968,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121548919
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "each nostril"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "16 g"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:56:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/11",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 287,
+                    "coding": [
+                        {
+                            "display": 287,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121277787
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/12",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 9144,
+                    "coding": [
+                        {
+                            "display": 9144,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282163
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/13",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 18968,
+                    "coding": [
+                        {
+                            "display": 18968,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282233
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "each nostril"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-25T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:22:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/14",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 13908,
+                    "coding": [
+                        {
+                            "display": 13908,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121531581
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-29T13:29:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/15",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 15914,
+                    "coding": [
+                        {
+                            "display": 15914,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121543272
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:45:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/16",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 7874,
+                    "coding": [
+                        {
+                            "display": 7874,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121548916
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:56:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/17",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 3306,
+                    "coding": [
+                        {
+                            "display": 3306,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121543271
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:45:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/18",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 5511,
+                    "coding": [
+                        {
+                            "display": 5511,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121279272
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "intravenous"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-25T00:00:00",
+                        "end": "2014-04-25T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:54:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/19",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 4375,
+                    "coding": [
+                        {
+                            "display": 4375,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282160
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-25T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:19:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/20",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 4375,
+                    "coding": [
+                        {
+                            "display": 4375,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121277789
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-25T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/21",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 10001,
+                    "coding": [
+                        {
+                            "display": 10001,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121277790
+                    }
+                ],
+                "category": {
+                    "text": "Historical Med",
+                    "coding": [
+                        {
+                            "display": "Historical Med"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T19:20:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/22",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 7874,
+                    "coding": [
+                        {
+                            "display": 7874,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282231
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-25T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:22:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/23",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 287,
+                    "coding": [
+                        {
+                            "display": 287,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282232
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-25T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:22:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/24",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 20176,
+                    "coding": [
+                        {
+                            "display": 20176,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121287248
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-26T00:00:00",
+                        "end": "2014-04-29T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T23:41:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/25",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 6114,
+                    "coding": [
+                        {
+                            "display": 6114,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121548917
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:56:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/26",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 9144,
+                    "coding": [
+                        {
+                            "display": 9144,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121282230
+                    }
+                ],
+                "category": {
+                    "text": "Normal",
+                    "coding": [
+                        {
+                            "display": "Normal"
+                        }
+                    ]
+                },
+                "status": "stopped",
+                "authoredOn": "2014-04-25T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": ""
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-26T00:00:00",
+                        "end": "2014-04-26T00:00:00"
+                    }
+                },
+                "entryDate": "2014-04-25T21:22:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "https://apiconnect-dev.mountsinai.org/api/MedicationRequest/27",
+            "resource": {
+                "resourceType": "MedicationRequest",
+                "intent": "order",
+                "priority": "routine",
+                "medicationCodeableConcept": {
+                    "text": 287,
+                    "coding": [
+                        {
+                            "display": 287,
+                            "system": "EPIC_MS_MEDICATION"
+                        }
+                    ]
+                },
+                "subject": {
+                    "reference": "MEDICAL_RECORD_NUMBER/MRN"
+                },
+                "context": {
+                    "display": 96361773
+                },
+                "identifier": [
+                    {
+                        "use": "official",
+                        "value": 121548918
+                    }
+                ],
+                "category": {
+                    "text": "Print",
+                    "coding": [
+                        {
+                            "display": "Print"
+                        }
+                    ]
+                },
+                "status": "unknown",
+                "authoredOn": "2014-04-29T00:00:00",
+                "dosageInstruction": [
+                    {
+                        "route": {
+                            "text": "oral"
+                        }
+                    }
+                ],
+                "dispenseRequest": {
+                    "quantity": {
+                        "value": "30 tablet"
+                    },
+                    "validityPeriod": {
+                        "start": "2014-04-29T00:00:00",
+                        "end": ""
+                    }
+                },
+                "entryDate": "2014-04-29T15:56:00",
+                "refillsRemaining": "",
+                "requester": {
+                    "agent": {
+                        "display": "NAME"
+                    }
+                },
+                "note": [
+                    {
+                        "text": ""
+                    }
+                ]
+            }
+        }
+    ]
+}

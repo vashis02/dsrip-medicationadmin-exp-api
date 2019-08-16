@@ -1,0 +1,4 @@
+      msmrn:
+        type: string
+        required: false
+        description: Medical record number

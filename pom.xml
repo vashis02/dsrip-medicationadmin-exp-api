@@ -23,7 +23,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<shared.error.handler.version>1.0.0-SNAPSHOT</shared.error.handler.version>
-		<spring.version>4.3.17.RELEASE</spring.version>
+		<spring.version>5.3.19</spring.version>
 		<spring.security.version>4.2.6.RELEASE</spring.security.version>
 		<domain.version>1.0.0-SNAPSHOT</domain.version>
 	</properties>
